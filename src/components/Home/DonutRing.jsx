@@ -17,5 +17,5 @@ export default function DonutRing({value=70}){
     plugins:{legend:{display:false}, tooltip:{enabled:false}},
     animation:false
   };
-  return <div className="ring"><Doughnut data={data} options={options} /></div>;
+  return <div style={{ width: 86, height: 86 }}><Doughnut data={data} options={options} /></div>;
 }

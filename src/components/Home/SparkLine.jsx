@@ -21,5 +21,5 @@ export default function Sparkline({points=[5,7,6,9,5,8,6]}){
     scales:{x:{display:false}, y:{display:false}},
     elements:{line:{borderJoinStyle:"round"}}
   };
-  return <div className="spark"><Line data={data} options={options}/></div>;
+  return <div className="flex-none w-[220px]"><Line data={data} options={options}/></div>;
 }

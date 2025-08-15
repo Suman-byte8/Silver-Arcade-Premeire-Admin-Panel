@@ -1,27 +1,30 @@
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { CiSearch } from "react-icons/ci";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
+import { Switch } from "./ui/switch";
 
 export default function Topbar(){
   const ref = useRef(null);
-//   useEffect(()=>{ gsap.from(ref.current,{y:-20,opacity:0,duration:.5}); },[]);
+  const { theme, toggleTheme } = useTheme();
+  
   return (
-    <div ref={ref} className="bg-white shadow-md p-4 flex items-center justify-between">
+    <div ref={ref} className="bg-white shadow-md p-4 flex items-center justify-between dark:bg-card">
       <div className="text-2xl font-semibold">Welcome Admin!</div>
 
       <div className="flex-1 max-w-xl mx-4">
-        <div className="flex items-center bg-white border border-gray-300 rounded-full px-4 py-2">
+        <div className="flex items-center bg-white border border-gray-300 rounded-full px-4 py-2 dark:bg-card dark:border-gray-600">
           <input className="flex-1 outline-none bg-transparent" placeholder="Search" />
           <div className="w-8 h-8 flex items-center justify-center">
-            <i className="fa-solid fa-magnifying-glass text-gray-500"/>
+            <CiSearch className="text-gray-500 dark:text-muted"/>
           </div>
         </div>
       </div>
 
-      <div className="flex items-center">
-        <div className="flex items-center space-x-2 bg-gray-700 text-white rounded-full p-1 px-3">
-          <i className="fa-regular fa-sun" />
-          <i className="fa-regular fa-moon" />
-        </div>
+      <div className="flex items-center space-x-2">
+        <FaMoon className="text-gray-500" />
+        <Switch checked={theme === 'dark'} onCheckedChange={toggleTheme} />
+        <FaSun className="text-yellow-500" />
       </div>
     </div>
   );

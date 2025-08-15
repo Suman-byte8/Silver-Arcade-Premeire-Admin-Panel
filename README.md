@@ -1,12 +1,128 @@
-# React + Vite
+# Silver Arcade Premier Admin Panel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive admin panel built with React and Tailwind CSS featuring dark/light mode toggle functionality.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Authentication
+- Login page with email/username and password
+- Signup page with full registration form
+- Forgot password functionality
+- Clean, centered authentication forms with dark mode support
 
-## Expanding the ESLint configuration
+### Theme Management
+- Dark/light mode toggle using react-icons
+- Theme persistence using localStorage
+- System preference detection for initial theme
+- Smooth transitions between themes
+- shadcn switch component for theme toggle
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### UI Components
+- Responsive sidebar navigation with react-icons
+- Topbar with search functionality and theme toggle
+- Dashboard with statistical cards and favorite items
+- Consistent styling across all components with dark mode support
+
+### Routing
+- Separate layouts for authentication and main application pages
+- Sidebar and topbar hidden on authentication routes
+- Proper navigation between pages
+
+## Technologies Used
+
+- React 18
+- Tailwind CSS
+- React Router v6
+- react-icons
+- shadcn/ui
+- Chart.js (for data visualization)
+- GSAP (for animations)
+
+## Setup Instructions
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Sidebar.jsx
+│   ├── Topbar.jsx
+│   └── Home/
+│       ├── StatCard.jsx
+│       ├── FavouriteItemCard.jsx
+│       ├── DonutRing.jsx
+│       └── SparkLine.jsx
+├── context/
+│   └── ThemeContext.jsx
+├── pages/
+│   ├── Home.jsx
+│   └── Auth/
+│       ├── Login.jsx
+│       ├── Signup.jsx
+│       └── ForgotPassword.jsx
+├── constants/
+│   └── sidebarLinks.js
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Recent Enhancements
+
+1. **Theme System**:
+   - Implemented a complete dark/light mode toggle using React Context
+   - Added shadcn switch component for theme toggle
+   - Created CSS variables for consistent theming
+   - Added localStorage persistence for user preferences
+
+2. **Authentication Pages**:
+   - Redesigned login, signup, and forgot password pages
+   - Centered all authentication forms on the page
+   - Added consistent styling with dark mode support
+   - Fixed navigation between authentication pages
+
+3. **Routing Improvements**:
+   - Separated layouts for authentication and main application
+   - Sidebar and topbar now hidden on authentication routes
+   - Proper route structure for all pages
+
+4. **UI Components**:
+   - Fixed sidebar icon imports and navigation links
+   - Improved form styling across all components
+   - Added consistent dark mode support for all elements
+
+## Available Scripts
+
+- `npm run dev` - Starts the development server
+- `npm run build` - Builds the project for production
+- `npm run preview` - Previews the production build locally
+- `npm run lint` - Runs ESLint on the project
+
+## Browser Support
+
+The application is optimized for modern browsers that support:
+- CSS Variables
+- ES6+ JavaScript
+- Flexbox and Grid layouts
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
+
+## License
+
+This project is licensed under the MIT License.
